@@ -24,17 +24,17 @@ Exemplo de aplicativo web full stack, com dados a partir de uma API prisma, e um
 ## Instalação
 1. Clone este repositório
 2. Abra com o VsCode e abra o terminal **bash** ou **cmd**
-3. acesse a pasta **./api** e execute o comando `npm install`
+3. Acesse a pasta **./api** e execute o comando `npm install`
 ```bash
 cd api
 npm install
 ```
-4. crie um arquivo `.env` na pasta **./api** e adicione a seguinte linha:
+4. Crie um arquivo `.env` na pasta **./api** e adicione a seguinte linha:
 ```env
 DATABASE_URL="mysql://root@localhost:3306/produtos?schema=public&timezone=UTC"
 ```
 5. Abra o XAMPP e inicie o servidor **Apache** e **MySQL**
-6. No terminal do vs code instale o banco de dados e os dados de exemplo seed via prisma
+6. Ainda no **terminal **do VsCode migre o BD e semeie os dados de teste, prisma seed, com o comando a seguir:
 ```bash
 npx prisma migrate dev --name init
 ```
