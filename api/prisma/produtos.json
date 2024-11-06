@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "nome": "Tênis lindão",
+        "descricao": "O tênis mais lindo do mundo",
+        "preco": 200.00,
+        "imagem": "tenis1.png"
+    },
+    {
+        "id": 2,
+        "nome": "Tênis bunitinho",
+        "descricao": "O tênis mais bunitinho de hoje",
+        "preco": 180.00,
+        "imagem": "tenis2.png"
+    },
+    {
+        "id": 3,
+        "nome": "Bruzinha",
+        "descricao": "Camiseta branca simples",
+        "preco": 49.90,
+        "imagem": "camiseta1.png"
+    },
+    {
+        "id": 4,
+        "nome": "Camiseta Preta",
+        "descricao": "Camiseta pretinha básica",
+        "preco": 59.90,
+        "imagem": "camiseta2.png"
+    },
+    {
+        "id": 5,
+        "nome": "Calsa jeans masculino",
+        "descricao": "Calsa jeans masculino, azul básico",
+        "preco": 49.90,
+        "imagem": "calsa1.png"
+    },
+    {
+        "id": 6,
+        "nome": "Calsa jeans feminino",
+        "descricao": "Calsa jeans feminino, azul básico",
+        "preco": 49.90,
+        "imagem": "calsa2.png"
+    }
+]

@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const Produto = require('./controllers/produto');
+
+router.post('/produtos', Produto.create);
+router.get('/produtos', Produto.read);
+router.get('/produtos/:id', Produto.read);
+router.patch('/produtos', Produto.update);
+router.delete('/produtos/:id', Produto.del);
+
+router.get('/', (req, res) => { return res.json("API Produtos respondendo.") });
+
+module.exports = router;

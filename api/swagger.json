@@ -1,0 +1,205 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Produtos (Node + Prisma + MySQL[MariaDB])",
+        "version": "1.0.0",
+        "description": "Documentação da API PRODUTOS"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Servidor local"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Teste",
+            "description": "Endpoint de teste da API"
+        },
+        {
+            "name": "CRUD de Produtos",
+            "description": "Endpoints de produtos"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Obter status da API",
+                "tags": [
+                    "Teste"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de requisição - Cliente"
+                    },
+                    "500": {
+                        "description": "Erro de resposta - Servidor"
+                    }
+                }
+            }
+        },
+        "/produtos": {
+            "post": {
+                "summary": "Cadastrar um novo produto",
+                "tags": [
+                    "CRUD de Produtos"
+                ],
+                "requestBody": {
+                    "description": "Dados de criação",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "descricao": {
+                                        "type": "string"
+                                    },
+                                    "preco": {
+                                        "type": "number"
+                                    },
+                                    "imagem": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "nome",
+                                    "preco"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Criado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de envio de dados - Cliente"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Obter lista de produtos",
+                "tags": [
+                    "CRUD de Produtos"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de requisição - Cliente"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Alterar dados de um produto",
+                "tags": [
+                    "CRUD de Produtos"
+                ],
+                "requestBody": {
+                    "description": "Dados de alteração",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "descricao": {
+                                        "type": "string"
+                                    },
+                                    "preco": {
+                                        "type": "number"
+                                    },
+                                    "imagem": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "202": {
+                        "description": "Alterado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de envio de dados - Cliente"
+                    },
+                    "404": {
+                        "description": "Produto não encontrado - Cliente"
+                    }
+                }
+            }
+        },
+        "/produtos/{id}": {
+            "get": {
+                "summary": "Obter dados de apenas um produto, filtrando por ID",
+                "tags": [
+                    "CRUD de Produtos"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "ID do produto para filtrar",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de requisição - Cliente"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Excluir um produto, filtrando por ID",
+                "tags": [
+                    "CRUD de Produtos"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "ID do produto a ser excluído",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de requisição - Cliente"
+                    },
+                    "404": {
+                        "description": "Produto não encontrado - Cliente"
+                    }
+                }
+            }
+        }
+    }
+}
